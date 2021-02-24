@@ -10,4 +10,15 @@ use PHPUnit\Framework\Assert;
  */
 class FeatureContext extends RawMinkContext {
 
+    /**
+     * @param string $sum
+     *
+     * @Then /Sum should be equal (?P<sum>\d+)/
+     */
+    public function thenSumShouldBeEqual(string $sum) {
+        $response = $this->getSession()->getPage()->getContent();
+        $json = json_decode($response, true);
+        Assert::assertEquals($sum, $json['sum']);
+    }
+
 }
