@@ -4,3 +4,7 @@
 sum:
   path: /sum/{a}/{b}
   controller: App\Controller\SumController::sumAction
+
+positions:
+  path: /positions/{id}
+  controller: App\Controller\PositionsController::positionsAction
