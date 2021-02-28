@@ -5,7 +5,7 @@ namespace App\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 
-class PositionsController
+class PositionController
 {
     public function positionsAction(int $id): JsonResponse
     {
