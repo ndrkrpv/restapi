@@ -6,24 +6,127 @@ namespace App\Entity;
 
 class Position
 {
-    private $id;
+    private int $id;
 
-    private $jobTitle;
+    private string $jobTitle;
 
-    private $seniorityLevel;
+    private string $seniorityLevel;
 
-    private $country;
+    private string $country;
 
-    private $city;
+    private string $city;
 
-    private $salary;
+    private int $salary;
 
-    private $currency;
+    private string $currency;
 
-    private $requiredSkills;
+    private string $requiredSkills;
 
-    private $companySize;
+    private string $companySize;
 
-    private $companyDomain;
+    private string $companyDomain;
 
+    public function __construct(
+        $id,
+        $jobTitle,
+        $seniorityLevel,
+        $country,
+        $city,
+        $salary,
+        $currency,
+        $requiredSkills,
+        $companySize,
+        $companyDomain
+    ) {
+        $this->id = $id;
+        $this->jobTitle = $jobTitle;
+        $this->seniorityLevel = $seniorityLevel;
+        $this->country = $country;
+        $this->city = $city;
+        $this->salary = $salary;
+        $this->currency = $currency;
+        $this->requiredSkills = $requiredSkills;
+        $this->companySize = $companySize;
+        $this->companyDomain = $companyDomain;
+    }
+
+    /**
+     * @return int
+     */
+    public function getId(): int
+    {
+        return $this->id;
+    }
+
+    /**
+     * @return string
+     */
+    public function getJobTitle(): string
+    {
+        return $this->jobTitle;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSeniorityLevel(): string
+    {
+        return $this->seniorityLevel;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCountry(): string
+    {
+        return $this->country;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCity(): string
+    {
+        return $this->city;
+    }
+
+    /**
+     * @return int
+     */
+    public function getSalary(): int
+    {
+        return $this->salary;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCurrency(): string
+    {
+        return $this->currency;
+    }
+
+    /**
+     * @return string
+     */
+    public function getRequiredSkills(): string
+    {
+        return $this->requiredSkills;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCompanySize(): string
+    {
+        return $this->companySize;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCompanyDomain(): string
+    {
+        return $this->companyDomain;
+    }
 }
