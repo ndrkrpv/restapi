@@ -8,10 +8,18 @@ use PHPUnit\Framework\TestCase;
 
 class PositionServiceTest extends TestCase
 {
+    private PositionService $service;
+
+    public function setUp()
+    {
+        parent::setUp();
+        $this->service = new PositionService();
+    }
+
     public function testShouldRetrievePositionByIdWhenExists()
     {
-        $service = new PositionService();
-        self::assertInstanceOf(Position::class, $service->retrievePositionById(1));
+        $position = $this->service->retrievePositionById(1);
+        self::assertInstanceOf(Position::class, $position);
     }
 
 }
