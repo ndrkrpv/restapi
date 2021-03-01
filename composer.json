@@ -8,6 +8,7 @@
 		"symfony/console": "*",
 		"symfony/flex": "^1.1",
 		"symfony/framework-bundle": "*",
+		"symfony/serializer": "4.4",
 		"symfony/yaml": "*"
 	},
 	"require-dev": {
