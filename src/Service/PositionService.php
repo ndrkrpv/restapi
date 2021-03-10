@@ -8,22 +8,27 @@ use App\Entity\Position;
 
 class PositionService
 {
+    private StorageAdapter $storageAdapter;
+
+    public function __construct(StorageAdapter $storageAdapter) {
+        $this->storageAdapter = $storageAdapter;
+    }
+
     /**
      * @param int $id
      * @return Position
+     * @throws \Exception
      */
-    public function retrievePositionById(int $id) {
-        return new Position(
-           1,
-           "Senior PHP Developer",
-           "Senior",
-           "DE",
-           "Berlin",
-           747500,
-           "SVU",
-           "PHP, Symfony, REST, Unit-testing, Behat, SOLID, Docker, AWS",
-           "100-500",
-           "Automotive"
-        );
+    public function findById(int $id): Position {
+        $result = $this->storageAdapter->find($id);
+        if (!$result) {
+            throw new \Exception("Position with id $id was not found");
+        }
+
+        return $this->mapRowToPosition($result);
+    }
+
+    private function mapRowToPosition(array $row) {
+        return Position::fromState($row);
     }
 }

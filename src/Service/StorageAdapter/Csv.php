@@ -20,7 +20,7 @@ class Csv implements StorageAdapter
     public function find(int $id)
     {
         if (isset($this->data[$id - 1])) {
-            return $this->data[$id -1];
+            return $this->data[$id - 1];
         }
         return [];
     }
