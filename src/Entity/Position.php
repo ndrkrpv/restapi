@@ -50,6 +50,21 @@ class Position
         $this->companyDomain = $companyDomain;
     }
 
+    public static function fromState(array $state) {
+        return new self(
+            $state["ID"],
+            $state["Job title"],
+            $state["Seniority level"],
+            $state["Country"],
+            $state["City"],
+            $state["Salary"],
+            $state["Currency"],
+            $state["Required skills"],
+            $state["Company size"],
+            $state["Company domain"],
+        );
+    }
+
     /**
      * @return int
      */
@@ -129,4 +144,15 @@ class Position
     {
         return $this->companyDomain;
     }
+
+    public function toArray() {
+        $vars = get_object_vars($this);
+        $array = [];
+        foreach ($vars as $key => $value) {
+            $array[ltrim($key, '_')] = $value;
+        }
+
+        return $array;
+    }
+
 }
