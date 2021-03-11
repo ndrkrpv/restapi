@@ -17,12 +17,11 @@ class PositionService
     /**
      * @param int $id
      * @return Position
-     * @throws \Exception
      */
-    public function findById(int $id): Position {
+    public function findById(int $id): ?Position {
         $result = $this->storageAdapter->find($id);
         if (!$result) {
-            throw new \Exception("Position with id $id was not found");
+            return null;
         }
 
         return $this->mapRowToPosition($result);

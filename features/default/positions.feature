@@ -10,5 +10,11 @@ Feature: Positions endpoint
     Then the response status code should be 200
     And Position should be equal {"id":2,"jobTitle":"Middle PHP Developer","seniorityLevel":"Middle","country":"NL","city":"Amsterdam","salary":632500,"currency":"SVU","requiredSkills":"PHP, Unit-testing, Symfony, SOLID","companySize":"100-500","companyDomain":"Mining"}
 
+  Scenario: Check that endpoint returns 404 if provided id does not exist
+    When I am on "positions/28"
+    Then the response status code should be 404
+    And Position should be equal {"errorMessage":"Position was not found"}
+      
+
 
 

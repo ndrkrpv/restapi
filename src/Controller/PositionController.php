@@ -14,10 +14,13 @@ class PositionController
         $this->positionService = $positionService;
     }
 
-
     public function positionsAction(int $id): JsonResponse
     {
         $position = $this->positionService->findById($id);
+
+        if (!$position) {
+            return new JsonResponse(['errorMessage' => 'Position was not found'], Response::HTTP_NOT_FOUND);
+        }
         return new JsonResponse($position->toArray(), Response::HTTP_OK);
     }
 
