@@ -27,6 +27,10 @@ class PositionService
         return $this->mapRowToPosition($result);
     }
 
+    public function findBy($field, $value) {
+        return [];
+    }
+
     private function mapRowToPosition(array $row) {
         return Position::fromState($row);
     }
