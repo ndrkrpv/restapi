@@ -24,4 +24,8 @@ class PositionsController
         return new JsonResponse($position->toArray(), Response::HTTP_OK);
     }
 
+    public function positionsByCountryAction(string $country): JsonResponse {
+        return new JsonResponse([], Response::HTTP_OK);
+    }
+
 }

@@ -8,3 +8,7 @@ sum:
 positions:
   path: /positions/{id}
   controller: App\Controller\PositionsController::positionsAction
+
+positionsByCountry:
+  path: /countries/{country}/positions
+  controller: App\Controller\PositionsController::positionsByCountryAction
