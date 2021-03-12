@@ -6,7 +6,7 @@ use App\Service\PositionService;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 
-class PositionController
+class PositionsController
 {
     private PositionService $positionService;
 
