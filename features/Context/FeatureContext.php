@@ -23,13 +23,13 @@ class FeatureContext extends RawMinkContext {
 
 
     /**
-     * @param string $position
+     * @param string $body
      *
-     * @Then /Position should be equal (?P<position>.+)/
+     * @Then /body should be equal (?P<position>.+)/
      */
-    public function thenPositionShouldBeEqual(string $position): void {
+    public function thenBodyShouldBeEqual(string $body): void {
         $response = $this->getSession()->getPage()->getContent();
-        Assert::assertEquals($position, $response);
+        Assert::assertEquals($body, $response);
     }
 
 }
