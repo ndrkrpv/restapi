@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Position;
 use App\Service\PositionService;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
@@ -25,7 +26,11 @@ class PositionsController
     }
 
     public function positionsByCountryAction(string $country): JsonResponse {
-        return new JsonResponse([], Response::HTTP_OK);
+        $positions = $this->positionService->findBy('Country', $country);
+        $positions = array_map(function(Position $position) {
+            return $position->toArray();
+        }, $positions);
+        return new JsonResponse($positions, Response::HTTP_OK);
     }
 
 }
