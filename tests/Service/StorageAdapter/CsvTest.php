@@ -10,7 +10,8 @@ class CsvTest extends TestCase
 {
     private Csv $service;
 
-    public function setUp() {
+    public function setUp()
+    {
         parent::setUp();
         $decoder = new CsvEncoder(); // TODO mock this
         $this->service = new Csv($decoder, 'positions.csv');
@@ -32,5 +33,25 @@ class CsvTest extends TestCase
             "Company domain" => "FinTech"
         ], $result);
     }
+
+    public function testShouldFindByFieldValueWhenRowExists()
+    {
+        $result = $this->service->findBy('Country', 'IE');
+        self::assertSame([
+            3 => [
+                "ID" => "3",
+                "Job title" => "Junior PHP Developer",
+                "Seniority level" => "Junior",
+                "Country" => "IE",
+                "City" => "Dublin",
+                "Salary" => "517500",
+                "Currency" => "SVU",
+                "Required skills" => "PHP, HTML, LAMP, CSS, SQL",
+                "Company size" => "100-500",
+                "Company domain" => "Communication"
+            ]
+        ], $result);
+    }
+
 
 }
