@@ -2,3 +2,4 @@ ID,Job title,Seniority level,Country,City,Salary,Currency,Required skills,Compan
 1,Senior PHP Developer,Senior,PT,Lisbon,747500,SVU,"PHP, REST, Symfony, Unit-testing, SOLID, Behat, Docker, AWS",100-500,FinTech
 2,Middle PHP Developer,Middle,NL,Amsterdam,632500,SVU,"PHP, Unit-testing, Symfony, SOLID",100-500,Mining
 3,Junior PHP Developer,Junior,IE,Dublin,517500,SVU,"PHP, HTML, LAMP, CSS, SQL",100-500,Communication
+4,Senior PHP Developer,Senior,PT,Lisbon,800000,SVU,"PHP, Unit-testing, Symfony, SOLID",100-500,Automotive
